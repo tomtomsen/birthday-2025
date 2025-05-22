@@ -28,7 +28,7 @@ function Board(props: BoardProps) {
     return (
         <>
             <Content justifyContent="center" display="flex">
-                <div style={{ display: 'grid', gap: "0px", gridTemplateColumns: `repeat(${size}, 50px)`, gridTemplateRows: `repeat(${size}, 50px)` }}>
+                <div style={{ display: 'grid', gap: "0px", gridTemplateColumns: `repeat(${size}, 80px)`, gridTemplateRows: `repeat(${size}, 80px)` }}>
                 {[...Array(size*size)].map((_, position) => {
 
                         const isKnight = currentPosition === position;
@@ -50,8 +50,8 @@ function Board(props: BoardProps) {
                         }}>
                             <div
                             style={{
-                                width: '50px',
-                                height: '50px',
+                                width: '80px',
+                                height: '80px',
                                 backgroundColor: color,
                                 display: 'flex',
                                 justifyContent: 'center',
