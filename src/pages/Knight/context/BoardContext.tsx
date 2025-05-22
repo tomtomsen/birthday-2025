@@ -76,15 +76,11 @@ export const BoardProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }, [currentPosition]);
 
     const moveKnight = useCallback((position: Position) => {
-        console.log("moveKnight", position, usedPositions);
-    
         if (currentPosition !== null && !allowedPositions.has(position)) {
-            console.log('Move blocked: not an allowed position');
             return;
         }
     
         if (usedPositions.has(position)) {
-            console.log('Move blocked: already used');
             return;
         }
     

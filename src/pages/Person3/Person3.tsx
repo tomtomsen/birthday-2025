@@ -18,8 +18,6 @@ function Person3() {
     const [ isDone, setIsDone ] = useState(false);
 
     useEffect(() => {
-        console.log('doneTaskVal', doneTaskVal);
-        console.log(tasks.mistery_persion_3 in doneTaskVal);
         setIsDone(tasks.mistery_persion_3 in doneTaskVal);
     }, [doneTaskVal]);
 
