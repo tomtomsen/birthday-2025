@@ -15,9 +15,9 @@ createRoot(document.getElementById('root')!).render(
           <Route path={ROUTES.home} element={<pages.Dashboard />} />
           <Route path={ROUTES.intro} element={<pages.Intro />} />
           <Route path={ROUTES.knight} element={<pages.Knight />} />
-          <Route path={ROUTES.mistery_persion_1} element={<pages.Selin />} />
-          <Route path={ROUTES.mistery_persion_2} element={<pages.Bianca />} />
-          <Route path={ROUTES.mistery_persion_3} element={<pages.Christina />} />
+          <Route path={ROUTES.mistery_persion_1} element={<pages.Person1 />} />
+          <Route path={ROUTES.mistery_persion_2} element={<pages.Person2 />} />
+          <Route path={ROUTES.mistery_persion_3} element={<pages.Person3 />} />
           <Route path={ROUTES.riddle1} element={<pages.Riddle1 />} />
           <Route path={ROUTES.riddle2} element={<pages.Riddle2 />} />
           <Route path={ROUTES.finish} element={<pages.Finish />} />

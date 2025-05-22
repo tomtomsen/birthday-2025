@@ -27,15 +27,17 @@ function Finish() {
                     </p>                    
                 </Content>
 
-                <ColorLock solution={[
-                    'orange',
-                    'red',
-                    'blue',
-                    'green',
-                    'white',
-                    'yellow',
-                    'red',
-                ]} onSuccess={handleSuccess}/>
+                <Content display="flex" justifyContent="center" alignItems="center">
+                    <ColorLock solution={[
+                        'orange',
+                        'red',
+                        'blue',
+                        'green',
+                        'white',
+                        'red',
+                        'orange',
+                    ]} onSuccess={handleSuccess}/>
+                </Content>
             </Page>
         </>
     )

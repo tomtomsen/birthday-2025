@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { Button, Content } from "react-bulma-components";
-
-type Color = 'red' | 'green' | 'blue' | 'yellow' | 'orange' | 'white';
+import ColorChangeButton from "../ColorChangeButton";
+import type { Color } from "../types";
 
 type ColorLockProps = {
     solution: [Color, Color, Color, Color, Color, Color, Color]
@@ -12,7 +11,7 @@ function ColorLock(props: ColorLockProps) {
     const [ attempt, setAttempt ] = useState<Color[]>(['red', 'red', 'red', 'red', 'red', 'red', 'red']);
 
     const handleChange = (index: number, color: string) => {
-        const newCode = [...props.solution];
+        const newCode = [...attempt];
         newCode[index] = color as Color;
         setAttempt(newCode);
 
@@ -23,46 +22,13 @@ function ColorLock(props: ColorLockProps) {
 
     return (
         <>
-            <Content display="flex" justifyContent="center" alignItems="center">
-                {attempt.map((_color: Color, index: number) => {
-                    return (
-                    <ColorSelector defaultColor={'red'} onChange={(color: Color) => handleChange(index, color)} />
-                    )
-                })}
-            </Content>
+            {attempt.map((_color: Color, index: number) => {
+                return (
+                <ColorChangeButton key={`color-${index}`} defaultColor={'red'} onChange={(color: Color) => handleChange(index, color)} />
+                )
+            })}
         </>
     );
 } 
-
-type ColorSelectorProps = {
-    defaultColor: Color;
-    onChange: (color: Color) => void;
-}
-
-function ColorSelector(props: ColorSelectorProps) {
-    const { defaultColor, onChange } = props;
-    const [ color, setColor ] = useState<Color>(defaultColor);
-    const colors: Color[] = ['red', 'green', 'blue', 'yellow', 'orange', 'white'];
-
-    const switchColor = () => {
-        const currentIndex = colors.indexOf(color);
-        const nextIndex = (currentIndex + 1) % colors.length;
-        const newColor = colors[nextIndex];
-        setColor(newColor);
-        onChange(newColor);
-    }
-
-    return (
-        <>
-            <Button
-                rounded
-                key={color}
-                style={{ backgroundColor: color, margin: '5px', width: '50px', height: '50px' }}
-                onClick={() => switchColor()}
-            >
-            </Button>
-        </>
-    );
-}
 
 export default ColorLock;

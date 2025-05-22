@@ -1,4 +1,4 @@
-import { Button, Content, Image } from "react-bulma-components";
+import { Box, Button, Content } from "react-bulma-components";
 import Page from "../../components/Page";
 import { useDoneTasks } from "../../services/TaskService";
 
@@ -21,12 +21,11 @@ function Riddle2() {
                         Versuche das Rätsel zu lösen.
                     </p>
                     <Content textAlign="center">
-                        <Image src="/riddle2.jpg" alt="Rätsel 2" size={"square"}  rounded/>
-                        <Button 
-                            color="primary" 
-                            onClick={() => handleClick()} 
-                            disabled={doneTaskIds.has(tasks.riddle2)}
-                        >
+                        <Box>
+                            <p>Ein Platz mit Blick, doch ohne Wort –<br/>
+                            sie hält, was blüht, am hellsten Ort.</p>
+                        </Box>
+                        <Button color="primary" onClick={() => handleClick()} disabled={doneTaskIds.has(tasks.riddle2)}>
                             Gelöst!
                         </Button>
                     </Content>
